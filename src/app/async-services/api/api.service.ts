@@ -15,12 +15,12 @@ export class ApiService {
   }
 
   doRequest(config, apiParams?) {
-    let action = this.findAction(config);
+    const action = this.findAction(config);
 
     if (action) {
-      let method = action['method'];
-      let cleanAction = this.getCleanAction(action);
-      let params = this.buildParams(method, apiParams);
+      const method = action['method'];
+      const cleanAction = this.getCleanAction(action);
+      const params = this.buildParams(method, apiParams);
 
       console.log('Action for config:', config, '-', cleanAction);
 
@@ -37,7 +37,7 @@ export class ApiService {
   }
 
   private findAction(config) {
-    let tree = this.apiTree;
+    const tree = this.apiTree;
     let obj;
 
     try {
@@ -83,7 +83,7 @@ export class ApiService {
   }
 
   private getCleanAction(action) {
-    let cleanAction = this.copy(action);
+    const cleanAction = this.copy(action);
 
     delete cleanAction['url'];
     delete cleanAction['method'];

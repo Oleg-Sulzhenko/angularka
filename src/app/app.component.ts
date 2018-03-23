@@ -28,13 +28,8 @@ export class AppComponent {
   }
 
   getPosts() {
-    /*let gonfig = {
-      chapter: 'a',
-      object: 'b',
-      action: 'c'
-    };*/
 
-    let gonfig = {
+    const gonfig = {
       chapter: 'mapList',
       object: 'assetsList',
       action: 'getAssetsList'
