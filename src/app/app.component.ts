@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { ApiService } from './async-services/api/api.service';
+import { AuthFireService } from './core/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'app';
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private authFireService: AuthFireService ) {}
 
   login() {
     this.apiService
@@ -46,4 +49,16 @@ export class AppComponent {
         console.log('got data from API', res);
       });
   }
+
+
+  // -----------------------------------------------
+
+  fireAuth() {
+    this.authFireService.signInWithGoogle();
+  }
+
+  isLoggedInFire() {
+    console.log('User is Logged - ', this.authFireService.isLoggedIn() );
+  }
+
 }

@@ -9,6 +9,14 @@ import { HttpService } from './async-services/http/http.service';
 import { HttpInterceptorService } from './async-services/http-inerceptor/http-interceptor.service';
 import { AuthService } from './async-services/auth/auth.service';
 
+// AngularFire
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthFireService } from './core/auth/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +25,16 @@ import { AuthService } from './async-services/auth/auth.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     ApiService,
     HttpService,
     AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
+    AuthFireService,
   ],
   bootstrap: [AppComponent]
 })
