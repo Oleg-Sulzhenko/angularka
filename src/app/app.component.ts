@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './async-services/api/api.service';
-import { AuthFireService } from './core/auth/auth.service';
+import { AuthFireService } from './core/auth.service';
 
 @Component({
   selector: 'app-root',
