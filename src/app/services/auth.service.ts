@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -12,7 +12,7 @@ export class AuthFireService {
 
   constructor(
     private _firebaseAuth: AngularFireAuth,
-    // private router: Routers
+    private router: Router
   ) {
     this.user = _firebaseAuth.authState;
 
@@ -42,7 +42,7 @@ export class AuthFireService {
     }
   }
   logout() {
-    // this._firebaseAuth.auth.signOut().then((res) => this.router.navigate(['/']));
+    this._firebaseAuth.auth.signOut().then((res) => this.router.navigate(['/']));
   }
 
 }

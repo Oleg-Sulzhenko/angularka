@@ -1,0 +1,154 @@
+.clearfix, .cf {
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+
+  &:after { clear: both; }
+}
+
+.left        { float: left; }
+.right       { float: right; }
+
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+.text-center { text-align: center; }
+
+// Display Values
+.inline       { display: inline; }
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.hide         { display: none; }
+
+// Typography
+.bold     { font-weight: bold; }
+.regular  { font-weight: normal; }
+.italic   { font-style: italic; }
+
+.ell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.break-word { word-wrap: break-word; }
+.no-wrap    { white-space: nowrap; }
+
+
+// Flexbox -------------------------------------------------------
+$elements: 12;
+@for $i from 0 to $elements {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.flex-inline {
+  display: inline-flex;
+}
+
+// Properties for the flex container
+.f-horizontal {
+  flex-direction: row;
+}
+.f-horizontal-reverse {
+  flex-direction: row-reverse;
+}
+.f-vertical {
+  flex-direction: column;
+}
+.f-vertical-reverse {
+  flex-direction: column-reverse;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+.f-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// Align Items
+.f-align-i-flex-start {
+  align-items: flex-start;
+}
+.f-align-i-flex-end {
+  align-items: flex-end;
+}
+.f-align-i-center {
+  align-items: center;
+}
+.f-align-i-baseline {
+  align-items: baseline;
+}
+.f-align-i-stretch {
+  align-items: stretch;
+}
+
+// Justify Content
+.f-justify-c-start {
+  justify-content: flex-start;
+}
+.f-justify-c-center {
+  justify-content: center;
+}
+.f-justify-c-end {
+  justify-content: flex-end;
+}
+.f-justify-c-space-between {
+  justify-content: space-between;
+}
+.f-justify-c-space-around {
+  justify-content: space-around;
+}
+.f-justify-c-space-evenly {
+  justify-content: space-evenly; // Firefox only
+}
+
+// Align Content
+.f-align-c-start {
+  align-content: flex-start;
+}
+.f-align-c-center {
+  align-content: center;
+}
+.f-align-c-end {
+  align-content: flex-end;
+}
+.f-align-c-space-between {
+  align-content: space-between;
+}
+.f-align-c-space-around {
+  align-content: space-around;
+}
+.f-align-c-stretch {
+  align-content: stretch;
+}
+
+// Properties for the flex items
+.f-align-self-start {
+  align-self: flex-start;
+}
+.f-align-self-center {
+  align-self: center;
+}
+.f-align-self-end {
+  align-self: flex-end;
+}
+.f-align-self-baseline {
+  align-self: baseline;
+}
+.f-align-self-stretch {
+  align-self: stretch;
+}
+
+
+
+
+
+
+

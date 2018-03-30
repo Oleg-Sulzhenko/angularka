@@ -8,13 +8,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 // SERVICES
-import { ApiService } from './async-services/api/api.service';
-import { HttpService } from './async-services/http/http.service';
-import { HttpInterceptorService } from './async-services/http-inerceptor/http-interceptor.service';
-import { AuthService } from './async-services/auth/auth.service';
+import { ApiService } from './services/async/api/api.service';
+import { HttpService } from './services/async/http/http.service';
+import { AuthFireService } from './services/auth.service';
+import { AuthGuardService } from './services/auth.guard.service';
 
 // AngularFire
-import { AuthFireService } from './core/auth.service';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -24,13 +23,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/containers/home/home.page.component';
 import { LoginComponent } from './components/containers/login/login.component';
+import { UserAccountComponent } from './components/containers/user-account-component/user-account-component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +47,8 @@ import { LoginComponent } from './components/containers/login/login.component';
   providers: [
     ApiService,
     HttpService,
-    AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
     AuthFireService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,20 @@
+<nav>
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/account" routerLinkActive="active">Account</a>
+</nav>
+<br/>
 <button (click)="login()">login</button>
 <button (click)="logout()">logout</button>
 <button (click)="getTree()">get tree</button>
 <button (click)="getPosts()">get posts</button>
+<br/>
+<br/>
 <button (click)="fireAuth()">Firebase Auth</button>
+<button (click)="firebaseLogOut()">Firebase LogOut</button>
 <button (click)="isLoggedInFire()">Is logged ?</button>
-
+<br/>
+<br/>
 <div class="main-container">
   <router-outlet></router-outlet>
 </div>

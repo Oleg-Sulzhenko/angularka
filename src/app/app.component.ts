@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from './async-services/api/api.service';
-import { AuthFireService } from './core/auth.service';
+import { ApiService } from './services/async/api/api.service';
+import { AuthFireService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +59,10 @@ export class AppComponent {
 
   isLoggedInFire() {
     console.log('User is Logged - ', this.authFireService.isLoggedIn() );
+  }
+
+  firebaseLogOut() {
+    this.authFireService.logout();
   }
 
 }

@@ -1,0 +1,30 @@
+// Global styles for main elements ...
+
+html, body, app-root {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0.83em 0;
+}
+
+.title {
+  height: 30px;
+  background-color: aquamarine;
+}
+
+// Containers
+.basic-card {
+  width: 350px;
+}
+.container {
+  height: 100%;
+}
+.container-centered {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
